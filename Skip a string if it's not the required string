@@ -1,0 +1,28 @@
+given String str="abbapplekh"
+we have to skip app not apple
+then is code didnot skip anything
+but whenever the string is given String str="appNotldj" // skip app not apple
+this is "app" is remove from string
+
+// output of this code is 
+
+public class Stream{
+    public static void main(String args[])
+    {
+        System.out.print(skipAppNotApple("bacappleca"));
+    }
+    static String skipAppNotApple(String up)
+    {
+        if(up.isEmpty())
+        {
+            return "";
+        }
+        if(up.startsWith("app") && !up.startsWith("apple"))
+        {
+            return skipAppNotApple(up.substring(3));
+        }else
+        {
+            return up.charAt(0)+ skipAppNotApple(up.substring(1));
+        }
+    }
+}
